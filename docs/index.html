@@ -2,28 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gaming Micro App</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#070614" />
+    <meta
+      name="description"
+      content="Orbit Hop — a one-tap pixel game. Ride a spinning neon planet and hop to the next before you drift off."
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Orbit Hop</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23070614'/%3E%3Ccircle cx='8' cy='11' r='4' fill='%2324e7ff'/%3E%3Ccircle cx='6.6' cy='9.6' r='1.1' fill='%23e7fdff'/%3E%3Crect x='7' y='3' width='2' height='2' fill='%23f4f0e4'/%3E%3Crect x='7' y='2' width='2' height='1' fill='%236ffbff'/%3E%3C/svg%3E"
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="app-shell">
-      <h1>Gaming Micro App Template</h1>
-      <p class="subtitle">Replace this starter content with your game UI.</p>
-
-      <section class="play-area" aria-label="Game area">
-        <canvas id="gameCanvas" width="960" height="540"></canvas>
-      </section>
-
-      <section class="notes">
-        <h2>Next steps</h2>
-        <ul>
-          <li>Build your game loop in <code>docs/game.js</code>.</li>
-          <li>Design your HUD/menu in this file.</li>
-          <li>Adjust styles in <code>docs/styles.css</code>.</li>
-        </ul>
-      </section>
-    </main>
+    <div id="stage">
+      <canvas
+        id="gameCanvas"
+        width="180"
+        height="320"
+        role="img"
+        aria-label="Orbit Hop. A tiny astronaut rides a spinning neon planet. Tap, click, or press space to hop."
+      ></canvas>
+    </div>
+    <button id="mute" type="button" aria-pressed="false" aria-label="Mute sound" title="Mute sound">
+      <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true">
+        <path fill="currentColor" d="M1.2 6h2.6l3.4-2.6v9.2L3.8 10H1.2z" />
+        <path class="wave" fill="none" stroke="currentColor" stroke-width="1.4" d="M9.6 6.1c.9.7.9 2.9 0 3.8" />
+        <path class="wave" fill="none" stroke="currentColor" stroke-width="1.4" d="M11.4 4.6c1.8 1.3 1.8 5.5 0 6.8" />
+        <path class="slash" fill="none" stroke="currentColor" stroke-width="1.4" d="M9.4 5.2l5 5.6" />
+      </svg>
+    </button>
+    <p class="credit">StudioRApps</p>
+    <p id="status" class="sr-only" aria-live="polite">Tap to hop.</p>
+    <noscript>
+      <p class="noscript">Orbit Hop needs JavaScript to play.</p>
+    </noscript>
     <script src="./game.js"></script>
   </body>
 </html>
